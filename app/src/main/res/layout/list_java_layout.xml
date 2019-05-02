@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/card_radius"
+    app:cardCornerRadius="@dimen/cornerradaius"
+    android:layout_margin="@dimen/cardmargin"
+    app:cardBackgroundColor="@android:color/transparent"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+        <View
+            android:layout_width="@dimen/status_view"
+            android:id="@+id/vw_status"
+            android:background="@color/red"
+            android:layout_height="wrap_content"
+
+           />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/vw_status"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Active"
+                android:textColor="@color/green"
+                android:id="@+id/txt_status"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_status"
+                android:id="@+id/txt_product_name"
+                android:textAlignment="center"
+                android:layout_margin="@dimen/margin_bottom"
+                android:textColor="@color/textcolor"
+                android:text="Service : Waste bags"
+                android:textSize="@dimen/texthead"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_product_name"
+                android:textSize="@dimen/textsize"
+                android:id="@+id/txt_quantity"
+                android:text="Quantity : 3"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/textcolor"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_product_name"
+                android:textSize="@dimen/textsize"
+                android:id="@+id/txt_room"
+                android:text="Room : 12"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/textcolor"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_product_name"
+                android:textSize="@dimen/textsize"
+                android:id="@+id/txt_time"
+                android:text="Time : 3.12.2019"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/textcolor"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

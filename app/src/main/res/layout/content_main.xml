@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:background="@android:color/transparent"
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/material_card_height"
+
+        android:id="@+id/img_main"
+        android:elevation="@dimen/cardview_default_elevation"
+        app:cardBackgroundColor="@color/graytint"
+        android:background="@drawable/background_color"
+       >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_card_height"
+            android:background="@drawable/background_color"
+            android:id="@+id/relative_layout_maincard"
+            android:visibility="gone"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_icon"
+                android:layout_width="@dimen/circularimg"
+                android:layout_height="@dimen/circularimg"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/main_card_margin"
+                android:src="@drawable/babycare"
+
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border_width="1dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/main_title"
+                android:textSize="@dimen/texthead"
+                android:id="@+id/txt_head_card"
+                android:textAlignment="center"
+                android:layout_below="@id/img_icon"
+                android:textColor="@color/text_main_card"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_below="@id/txt_head_card"
+                android:layout_marginTop="@dimen/margin_top"
+                android:id="@+id/badge_layer">
+                <ImageView
+                    android:id="@+id/numberofitems"
+
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/ic_notification"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    app:elevation="3dp" />
+                />
+
+                <TextView
+                    android:id="@+id/txtcount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/badge_circle"
+                    android:elevation="5dp"
+                    android:lastBaselineToBottomHeight="4dp"
+                    android:text=" 7 "
+                    android:textColor="@android:color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_height"
+                android:text="Login"
+                android:id="@+id/btnlogin"
+                android:layout_below="@id/img_icon"
+                android:layout_marginTop="@dimen/circularimg"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/roundbuttons"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_card_height"
+            android:background="@drawable/background_color">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_pic_login"
+                android:layout_width="@dimen/main_image"
+                android:layout_height="@dimen/main_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/product_linear_margin"
+                android:src="@drawable/babycare"
+
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border_width="1dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_login_username"
+               android:textColorHint="@color/textcolor"
+                android:layout_below="@id/profile_pic_login"
+               android:layout_marginLeft="@dimen/height_edittext"
+                android:layout_marginRight="@dimen/height_edittext"
+              >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username"
+                    android:textColor="@color/textcolor"
+                    android:textAlignment="center"
+                    android:id="@+id/edt_login_username"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_login_username"
+                android:id="@+id/layout_login_pasword"
+               android:textColorHint="@color/textcolor"
+                android:layout_marginLeft="@dimen/height_edittext"
+                android:layout_marginRight="@dimen/height_edittext"
+             >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_login_password"
+                    android:hint="password"
+                    android:textColor="@color/textcolor"
+                    android:textAlignment="center"
+                    android:inputType="textPassword"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_login_pasword"
+                android:layout_marginLeft="@dimen/height_edittext"
+                android:layout_marginRight="@dimen/height_edittext"
+                android:weightSum="2"
+                android:layout_marginTop="@dimen/product_linear_margin">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_below="@id/layout_login_pasword"
+                android:text="@string/login"
+                android:textColor="@color/textcolor"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/activity_button_margin"
+                android:background="@drawable/roundbuttons"
+                />
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_below="@id/layout_login_pasword"
+                    android:text="@string/register_user"
+                    android:textColor="@color/textcolor"
+                    android:layout_weight="1"
+                    android:layout_margin="@dimen/activity_button_margin"
+                    android:id="@+id/btn_login_regiter"
+                    android:background="@drawable/roundbuttons"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/whiteColor"
+        android:text="@string/copyright"
+
+        android:layout_alignParentBottom="true"
+        android:id="@+id/txt_copyright"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/img_main"
+        android:id="@+id/utility_layer"
+       android:layout_marginTop="@dimen/fab_margin"
+
+        >
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/card_main_elevation"
+            app:cardCornerRadius="@dimen/cornerradaius"
+            android:layout_margin="@dimen/cardmargin"
+            android:layout_weight="1"
+app:cardBackgroundColor="@android:color/transparent"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_garbage"
+                    android:layout_width="@dimen/circ_img"
+                    android:layout_height="@dimen/circ_img"
+                   android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_garbage"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="1dp"/>
+                <TextView
+                    android:id="@+id/txt_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Garbage"
+                    android:textAlignment="center"
+                    android:layout_below="@id/img_garbage"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/texthead"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/status_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/status_view"
+                    android:layout_below="@id/txt_head"
+                    android:background="@android:color/transparent" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardElevation="@dimen/card_main_elevation"
+            app:cardCornerRadius="@dimen/cornerradaius"
+            android:layout_margin="@dimen/cardmargin"
+           android:id="@+id/carda"
+            app:cardBackgroundColor="@android:color/transparent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_water"
+                    android:layout_width="@dimen/circ_img"
+                    android:layout_height="@dimen/circ_img"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_gas"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="1dp"/>
+                <TextView
+                    android:id="@+id/txt_head_water"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gas"
+                    android:textAlignment="center"
+                    android:layout_below="@id/img_water"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/texthead"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/status_view_water"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/status_view"
+                    android:layout_below="@id/txt_head_water"
+                    android:background="@color/view_main_color" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardElevation="@dimen/card_main_elevation"
+            app:cardCornerRadius="@dimen/cornerradaius"
+            android:layout_margin="@dimen/cardmargin"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:id="@+id/cardf">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_waterf"
+                    android:layout_width="@dimen/circ_img"
+                    android:layout_height="@dimen/circ_img"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_water"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="1dp"/>
+                <TextView
+                    android:id="@+id/txt_head_waterf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Water"
+                    android:textAlignment="center"
+                    android:layout_below="@id/img_waterf"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/texthead"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/status_view_waterf"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/status_view"
+                    android:layout_below="@id/txt_head_waterf"
+                    android:background="@color/view_main_color" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/utility_layer"
+        android:id="@+id/laundry_layer"
+       android:layout_marginTop="@dimen/product_linear_margin"
+        >
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/card_main_elevation"
+            app:cardCornerRadius="@dimen/cornerradaius"
+            android:layout_margin="@dimen/cardmargin"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@android:color/transparent"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_laundry"
+                    android:layout_width="@dimen/circ_img"
+                    android:layout_height="@dimen/circ_img"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_laundry"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="1dp"/>
+                <TextView
+                    android:id="@+id/txt_head_laundry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Laundry"
+                    android:textAlignment="center"
+                    android:layout_below="@id/img_laundry"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/texthead"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/status_view_laundry"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/status_view"
+                    android:layout_below="@id/txt_head_laundry"
+                    android:background="@color/view_main_color" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardElevation="@dimen/card_main_elevation"
+            app:cardCornerRadius="@dimen/cornerradaius"
+            android:layout_margin="@dimen/cardmargin"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:id="@+id/carde">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_security"
+                    android:layout_width="@dimen/circ_img"
+                    android:layout_height="@dimen/circ_img"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_security"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="1dp"/>
+                <TextView
+                    android:id="@+id/txt_head_security"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Security"
+                    android:textAlignment="center"
+                    android:layout_below="@id/img_security"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/texthead"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/status_view_security"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/status_view"
+                    android:layout_below="@id/txt_head_security"
+                    android:background="@color/view_main_color" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardElevation="@dimen/card_main_elevation"
+            app:cardCornerRadius="@dimen/cornerradaius"
+            android:layout_margin="@dimen/cardmargin"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:id="@+id/cardef">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_babycare"
+                    android:layout_width="@dimen/circ_img"
+                    android:layout_height="@dimen/circ_img"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_babycare"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="1dp"/>
+                <TextView
+                    android:id="@+id/txt_head_babycare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Babycare"
+                    android:textAlignment="center"
+                    android:layout_below="@id/img_babycare"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/texthead"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/status_view_baby"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/status_view"
+                    android:layout_below="@id/txt_head_babycare"
+                    android:background="@color/view_main_color" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/laundry_layer"
+        android:id="@+id/personal_layer"
+        android:layout_marginTop="@dimen/product_linear_margin"
+        >
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/card_main_elevation"
+            app:cardCornerRadius="@dimen/cornerradaius"
+            android:layout_margin="@dimen/cardmargin"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:id="@+id/cardprofile">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_profile"
+                    android:layout_width="@dimen/circ_img"
+                    android:layout_height="@dimen/circ_img"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_profile"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="1dp"/>
+                <TextView
+                    android:id="@+id/txt_head_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:textAlignment="center"
+                    android:layout_below="@id/img_profile"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/texthead"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/status_view_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/status_view"
+                    android:layout_below="@id/txt_head_profile"
+                    android:background="@color/view_main_color" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardElevation="@dimen/card_main_elevation"
+            app:cardCornerRadius="@dimen/cornerradaius"
+            android:layout_margin="@dimen/cardmargin"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:id="@+id/cardg">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_messages"
+                    android:layout_width="@dimen/circ_img"
+                    android:layout_height="@dimen/circ_img"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_msg"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="1dp"/>
+                <TextView
+                    android:id="@+id/txt_head_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Message"
+                    android:textAlignment="center"
+                    android:layout_below="@id/img_messages"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/texthead"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/status_view_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/status_view"
+                    android:layout_below="@id/txt_head_msg"
+                    android:background="@color/view_main_color" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardElevation="@dimen/card_main_elevation"
+            app:cardCornerRadius="@dimen/cornerradaius"
+            android:layout_margin="@dimen/cardmargin"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:id="@+id/cardh">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_settings"
+                    android:layout_width="@dimen/circ_img"
+                    android:layout_height="@dimen/circ_img"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_settings"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="1dp"/>
+                <TextView
+                    android:id="@+id/txt_head_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:textAlignment="center"
+                    android:layout_below="@id/img_settings"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/texthead"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/status_view_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/status_view"
+                    android:layout_below="@id/txt_head_settings"
+                    android:background="@color/view_main_color" />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</RelativeLayout>

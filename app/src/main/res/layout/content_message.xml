@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MessageActivity"
+    tools:showIn="@layout/activity_message"
+    android:background="@drawable/background_color">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/texthead"
+    android:textStyle="bold"
+    android:id="@+id/txt_head"
+    android:textColor="@color/textcolor"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:text="I ma kotlin "/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_head"
+        android:layout_margin="@dimen/fab_margin"
+        android:id="@+id/edt_layer"
+        android:textColorHint="@color/textcolor">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_edittext"
+            android:id="@+id/edt_name"
+            android:textColor="@color/textcolor"
+            android:textSize="@dimen/textsize"
+            android:hint="Full name"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btntest"
+        app:layout_constraintTop_toBottomOf="@id/edt_layer"
+        android:text="test"
+        android:background="@drawable/roundbuttons"
+        android:textColor="@color/textcolor"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
